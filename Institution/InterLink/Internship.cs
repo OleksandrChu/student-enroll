@@ -1,16 +1,32 @@
+using System.Collections.Generic;
+using InternshipTest.Person;
+
 namespace InternshipTest.Institution.InterLink
 {
     public class Internship
     {
+        string name;
+        List<Student> enrolledStudents = new List<Student>();
         public Internship(string name)
         {
-            //TODO: Implementation is needed      
+            this.name = name;      
         }
 
         public string GetStudents()
         {
-            //TODO: Implementation is needed
-            return "Andrew Maslenko\nJulia Veselkina\n";
+            string responce = "";
+            enrolledStudents.ForEach(student => responce += $"Student {student.GetName()} enrolled in an internship!\n");
+            return responce;
+        }
+
+        public void SelectStudentsFromUniversity(University university) 
+        {
+            int average = university.GetAverageKnowlendge();
+            university.GetStudents().ForEach(student => {
+                if(student.GetKnowledgeLevel() >= average) {
+                    enrolledStudents.Add(student);
+                }
+            });
         }
     }
 }
