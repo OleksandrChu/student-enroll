@@ -7,9 +7,10 @@ namespace InternshipTest.Institution
     {
         string name;
         List<Student> students = new List<Student>();
+
         public University(string name)
         {
-            this.name = name;  
+            this.name = name;
         }
 
         public void AddStudent(Student student)
@@ -17,12 +18,9 @@ namespace InternshipTest.Institution
             students.Add(student);
         }
 
-         public List<Student> GetStudents()
-        {
-            return students;
-        }
+        public List<Student> GetStudents() => students;
 
-        public int GetAverageKnowlendge() 
+        public int GetAverageKnowlendge()
         {
             int average = 0;
             students.ForEach(student => average += student.GetKnowledgeLevel());

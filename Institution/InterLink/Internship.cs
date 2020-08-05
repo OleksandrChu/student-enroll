@@ -9,7 +9,7 @@ namespace InternshipTest.Institution.InterLink
         List<Student> enrolledStudents = new List<Student>();
         public Internship(string name)
         {
-            this.name = name;      
+            this.name = name;
         }
 
         public string GetStudents()
@@ -19,11 +19,13 @@ namespace InternshipTest.Institution.InterLink
             return responce;
         }
 
-        public void SelectStudentsFromUniversity(University university) 
+        public void SelectStudentsFromUniversity(University university)
         {
-            int average = university.GetAverageKnowlendge();
-            university.GetStudents().ForEach(student => {
-                if(student.GetKnowledgeLevel() >= average) {
+            int averageKnowlegleLevel = university.GetAverageKnowlendge();
+            university.GetStudents().ForEach(student =>
+            {
+                if (student.GetKnowledgeLevel() >= averageKnowlegleLevel)
+                {
                     enrolledStudents.Add(student);
                 }
             });

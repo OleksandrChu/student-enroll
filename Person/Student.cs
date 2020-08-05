@@ -9,7 +9,7 @@ namespace InternshipTest.Person
             this.name = name;
         }
 
-         public Student(string name, Knowledge knowledge)
+        public Student(string name, Knowledge knowledge)
         {
             this.name = name;
             this.knowledge = knowledge;
